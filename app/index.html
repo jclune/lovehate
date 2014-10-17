@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>20140522</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="images/icon.png">
+		<!-- bower:css -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="bower_components/purecss/build/pure.css" />
+		<!-- endbower -->
+		<link rel="stylesheet" href="styles/main.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<header class="clearfix">
+			<div id="menuRight" class="menu">
+				<span class="glyphicon glyphicon-th"></span>
+			</div>
+			<div id="menuLeft" class="menu">
+				<span id="search" class="glyphicon glyphicon-search"></span>
+				<form id="searchForm" class="pure-form">
+					<input id="search" type="text" placeholder="search" autofocus="autofocus">
+				</form>
+			</div>
+			<h1 id="header"> <--  Love-Hate  --></h1>
+		</header>
+		<div class="center-wrap">
+			<div class="sidebyside center">
+				<button class="pure-button pure-button-primary">Love</button>
+				<button class="pure-button pure-button-secondary">Hate</button>
+			</div>
+		</div>
+		<div id="container" class="center-wrap">
+			<ul id="photos" class="center">
+				<li id="loading" style="width:320px; height:320px; background: gray url('/images/load.gif') no-repeat center center"></li>
+			</ul>
+		</div>
+
+		<!-- bower:js -->
+		<script src="bower_components/jquery/jquery.js"></script>
+		<script src="bower_components/modernizr/modernizr.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+		<!-- endbower -->
+		<script src="scripts/main.js"></script>
+	</body>
+</html>

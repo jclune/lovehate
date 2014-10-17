@@ -1,0 +1,543 @@
+@charset "UTF-8";
+
+$bgColor: lightgray;
+$colorPrime: #333322;
+$alpha: 0.8;
+$amount: 0.85;
+$fontSize: 16px;
+$width: 320px;
+$widthInner: 310px;
+
+body {
+    width: 100%;
+    background: $bgColor;
+    color: $colorPrime;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", verdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: $fontSize;
+    overflow: hidden;
+}
+
+.boxShadow {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+}
+header{
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+}
+.menu > span{
+    text-align: center;
+    width: 100%;
+}
+.menu{
+    width: 60px;
+    height: 60px;
+    padding: 10px 0;
+}
+#menuRight{
+    float: right;
+}
+#menuLeft{
+    float: left;
+}
+#menuLeft > form{
+    display: none;
+}
+#header {
+    margin: 10px 0 10px 0;
+    width: 200px;
+}
+header.settings > #header{
+    display: none;
+}
+header.settings > #menuLeft{
+    float: right;
+    width: 260px;
+    & > span{
+        width: 60px;
+        float: right;
+    }
+    & > form{
+        display: block;
+        float: right;
+        padding: 0 0 10px 15px;
+        & > input{
+            width: 185px;
+            z-index: 10;            
+        }
+    }    
+
+}
+
+span.glyphicon-th {
+    font-size: 2em;
+}
+span.glyphicon-cog {
+    font-size: 2.4em;
+}
+span.glyphicon-search {
+    font-size: 2em;
+}
+ul, li {
+    list-style: none;
+    padding: 0;
+    //margin: 0;
+}
+
+ul#photos {
+    width: $width;
+    position: relative;
+    z-index: 10;
+    &.thumbnails{
+    }
+}
+
+ul#photos li {
+    animation: enlarge 500mS;
+    animation-timing-function: ease-out;    
+    display: inline-block;
+    float: left;
+    //max-height: $widthInner;
+    width: $widthInner;
+    height: $widthInner;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: gray;
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+ul#photos.thumbnails li{
+    animation: shrink 500mS;
+    animation-timing-function: ease-out;
+    width: ($width/3) - 10;
+    height: ($width/3) - 10;
+    margin: 0 5px 10px 5px;
+    margin-left: 5px;
+}
+
+ul#photos img {
+    //width: $widthInner;
+    display: block;
+    max-height: 100%;    
+    width: auto;
+    height: auto;
+    margin: auto auto;
+    vertical-align: middle;   
+}
+ul#photos.thumbnails img {   
+}
+@keyframes shrink {
+    from {
+        width: $widthInner;
+        height: $widthInner;
+    }
+    to {
+        width: ($width/3) - 10;
+        height: ($width/3) - 10;
+    }
+}
+@keyframes enlarge {
+    from {
+        width: ($width/3) - 10;
+        height: ($width/3) - 10;
+    }        
+    to {
+        width: $widthInner;
+        height: $widthInner;
+    }
+}
+
+img {
+    margin: 0;
+    //vertical-align: bottom;
+}
+
+p {
+    margin: 0;
+    //overflow: hidden;
+    //white-space: nowrap;
+    //text-overflow: ellipsis;
+}
+
+a {
+    text-decoration: none;
+    cursor: auto;
+    color: $colorPrime;
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    &:hover {
+        text-decoration: none;
+        color: $colorPrime;
+    }
+}
+
+div {
+    //display: inline-block;
+    //box-sizing: border-box;
+}
+
+h1 {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 33px;
+    line-height: 33px;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebyside button {
+    margin: 0 35px;
+    border-radius: 60px;
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.pure-button-secondary {
+    background-color: rgb(223, 117, 20);
+    color: #fff;
+}
+
+#container {
+    display: block;
+}
+
+#container > img {
+    display: inline-block;
+}
+
+#landing {
+    height: 340px;
+}
+
+.mainTitle-inner {
+    color: #fff;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+    border-top: 1px dashed rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.3), inset 0px 0.5px 0px rgba(0, 0, 0, 0.3);
+}
+
+%mainTitle {
+    padding: 2px 0 3px 0;
+    background-color: rgb(255, 132, 50);
+    border-top: 1px solid rgb(54, 53, 62);
+    border-bottom: 1px solid rgb(54, 53, 62);
+    position: relative;
+}
+
+.mainTitleOrange {
+    @extend %mainTitle;
+}
+
+.mainTitleBlue {
+    @extend %mainTitle;
+    background-color: rgb(32, 183, 221);
+}
+
+.titleShadow {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.center-wrap {
+    text-align: center;
+    //display: inline-block;
+}
+
+.center-wrap:after {
+    content: '';
+    box-sizing: content-box;
+    visibility: hidden;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    //margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+.center {
+    display: inline-block;
+    vertical-align: middle;
+    //width: 300px;
+}
+
+p.center, a.center {
+    text-align: center;
+}
+
+.glue {
+    width: 100%;
+    color: white;
+    & > a {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+.textArea {
+    top: 2px;
+}
+
+.mv10 {
+    margin: 10 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+$rightSize: 20px;
+
+.right {
+    display: block;
+    float: right;
+    //position: relative;
+    margin-top: -41px;
+    margin-right: -15px;
+    width: $rightSize;
+    height: $rightSize;
+    background: transparent url("../images/right.svg") no-repeat;
+    background-size: $rightSize $rightSize;
+}
+
+ul.infoList li {
+    padding: 5px 30px 10px 10px;
+    border-bottom: 1px solid rgb(176, 186, 173);
+    &:nth-child(n+1) {
+        border-top: 1px solid rgb(255, 255, 255);
+    }
+}
+
+.infoList {
+    background: rgb(251, 240, 209);
+    font-size: 14px;
+}
+
+.infoListDate {}
+
+.infoListTitle {
+    padding: 5px 18px 0 0;
+    color: rgb(248, 66, 143);
+    text-decoration: underline;
+    &:hover {
+        color: rgb(248, 66, 143);
+        text-decoration: underline;
+    }
+}
+
+//buttons
+
+%btn {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: $fontSize;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    //text-shadow: 1px -1px 0px rgba(0,0,0,0.40);
+    //top: 2px;
+    height: 50px;
+    line-height: 50px;
+    width: 180px;
+    -webkit-border-radius: 4px;
+    box-shadow: inset 1px 1px 1px #fff, inset -1px -1px 1px #fff;
+    border: 1px solid #ff2c68;
+    background-image: linear-gradient(0deg, #fe517b 0%, #fe8fb5 100%);
+    //box-shadow:         0px 0px 2px 0px rgba(0,0,0,0.50);
+}
+
+.btn-primary, .btn-pink {
+    @extend %btn;
+    //same as default
+}
+
+.btn-secondary {
+    @extend %btn;
+    background-image: linear-gradient(-179deg, #9ef345 0%, #00991c 100%);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btn-small {
+    @extend %btn;
+    font-size: $fontSize * 0.75;
+    padding: 6px 22px;
+    line-height: 12px;
+}
+
+.btn-medium {
+    @extend %btn;
+    //same as default
+}
+
+.btn-large {
+    @extend %btn;
+    font-size: $fontSize / 0.75;
+    padding: 10px 36px;
+    line-height: 20px;
+}
+
+.btn2 {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+    width: 100px;
+}
+
+.btn2.border-box {
+    box-sizing: border-box;
+}
+
+/*
+@media only screen and (orientation: landscape){
+    h2{
+        color: red;
+        font-size: 40px;
+    }
+}
+@media only screen and (orientation: portrait){
+    h2{
+        color: purple;
+        font-size: 20px;
+    }
+}
+*/
+
+form {
+    padding: 30px;
+}
+
+img.fluid {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.image-btn {
+    vertical-align: middle;
+    width: 100px;
+    height: 36px;
+    display: inline-block;
+    background: url(../images/button-red.png) top left no-repeat;
+}
+
+//mobile rules below
+
+@media only screen and (max-width: 480px) {
+    a {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-touch-callout: none;
+    }
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+.form-mobile {
+    p {
+        padding: 0.4em;
+    }
+    // ラジオボタンやチェックボックスを選択しやすく
+    input[type="radio"],
+    input[type="checkbox"] {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        & + * {
+            margin: 0 0.4em;
+        }
+    }
+}
+
+//animations
+
+.misoda-sprite {
+    width: 170px;
+    height: 210px;
+    animation: misoda 2s steps(47) infinite;
+    background: url(../images/misoda.png) no-repeat;
+}
+
+@keyframes misoda {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 0px -9870px;
+    }
+}
+
+
+.gradient {
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 60s infinite linear;
+}
+
+@keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+
+
+.box {
+    box-sizing: border-box;
+    &.blink {
+        animation-name: blink;
+        // must
+        animation-duration: 1s;
+        // must
+        animation-timing-function: ease-in-out;
+        animation-delay: 0.5s;
+        // s | ms
+        animation-iteration-count: infinite;
+        // infinite | n
+        animation-direction: reverse;
+        // normal | reverse | alternate | alternate-reverse
+   
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
